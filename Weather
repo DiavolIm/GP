@@ -32,6 +32,13 @@
 							"pm.test(\"Долгий запрос\", function () {\r",
 							"    pm.expect(pm.response.responseTime).to.be.below(70);\r",
 							"\r",
+							"});\r",
+							"pm.test(\"Не доступен сервер\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Неверные входные параметры\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
 							"});"
 						],
 						"type": "text/javascript"
